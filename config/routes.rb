@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :website do
+    get 'welcome/index'
+  end
   namespace :profiles_backoffice do
     get 'welcome/index'
   end
@@ -7,7 +10,8 @@ Rails.application.routes.draw do
   end
   devise_for :profiles
   devise_for :admins
-  get 'welcome/index'
 
-  root to: 'welcome#index'
+  get 'inicio', to: 'website/welcome#index'
+
+  root to: 'website/welcome#index'
 end
