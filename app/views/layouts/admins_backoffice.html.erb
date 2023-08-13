@@ -19,28 +19,56 @@
 
 
   
-    <header class="container py-2 d-flex justify-content-end">
-      <div class="dropdown">
-        <span class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <%= current_admin.email %>
-        </span>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete, :class => "dropdown-item" do %>
-              <%= render_svg('logout.svg') %>
-              Sair
-            <% end %>
-          </li>
-        </ul>
+    <header id="nav-header" class="position-fixed w-100 bg-light">
+      <div class="container py-2 d-flex justify-content-end">
+        <div class="dropdown">
+          <span class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_admin.email %>
+          </span>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete, :class => "dropdown-item" do %>
+                <%= render_svg('logout.svg') %>
+                Sair
+              <% end %>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
 
-    <main>
+    <div id="content">
 
-      <div class="container">
-        <%= yield %>
-      </div>
+      <aside id="aside-menu">
+        <div class="container">
+          <h2>Backoffice Administrativo</h2>
 
-    </main>
+          <nav>
+            <h4>Geral</h4>
+            <ul>
+              <li>
+                <%= link_to '/dashboard' do %>
+                  <%= render_svg('dashboard.svg') %>
+                  Dashboard
+                <% end %>
+              </li>
+              <li>
+                <%= link_to '/administradores' do %>
+                  <%= render_svg('group.svg') %>
+                  Administradores
+                <% end %>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <main id="main-content">
+        <div class="container">
+          <%= yield %>
+        </div>
+      </main>
+
+    </div>
   </body>
 </html>
