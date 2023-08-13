@@ -1,1 +1,52 @@
 <h2>Administradores</h2>
+
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">
+        <div class="d-flex align-items-center gap-2">
+          <%= render_svg('mail') %> E-mail
+        </div>
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+
+    <% @admins.each do |admin| %>
+
+      <tr>
+        <td><%= admin.id %></td>
+        <td>
+          <a href="mailto:<%= admin.email %>">
+            <%= admin.email %>
+          </a>
+        </td>
+        <td>
+          <div class="d-flex justify-content-end gap-1">
+            <div 
+              data-bs-toggle="tooltip" 
+              data-bs-placement="bottom" 
+              data-bs-title="Editar">
+              <a href="#" class="btn btn-circle btn-primary">
+                <%= render_svg('edit_note') %>
+              </a>
+            </div>
+            <div 
+              data-bs-toggle="tooltip" 
+              data-bs-placement="bottom" 
+              data-bs-title="Apagar">
+              <a href="#" class="btn btn-circle btn-danger">
+                <%= render_svg('delete') %>
+              </a>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+    <% end %>
+
+  </tbody>
+</table>

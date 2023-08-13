@@ -8,11 +8,6 @@
     <%= stylesheet_link_tag    'application' %>
     <%= stylesheet_link_tag    'global' %>
 
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'global' %>
-    <%= javascript_include_tag 'pooper.min' %>
-    <%= javascript_include_tag 'bootstrap.min' %>
-
   </head>
 
   <body>
@@ -28,13 +23,13 @@
             <ul>
               <li>
                 <%= link_to admins_backoffice_welcome_index_path do %>
-                  <%= render_svg('dashboard.svg') %>
+                  <%= render_svg('dashboard') %>
                   Dashboard
                 <% end %>
               </li>
               <li>
                 <%= link_to admins_backoffice_admins_index_path do %>
-                  <%= render_svg('group.svg') %>
+                  <%= render_svg('group') %>
                   Administradores
                 <% end %>
               </li>
@@ -54,7 +49,7 @@
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li>
                     <%= link_to destroy_user_session_path, method: :delete, :class => "dropdown-item" do %>
-                      <%= render_svg('logout.svg') %>
+                      <%= render_svg('logout') %>
                       Sair
                     <% end %>
                   </li>
@@ -69,5 +64,12 @@
       </main>
 
     </div>
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'pooper.min' %>
+    <%= javascript_include_tag 'bootstrap.min' %>
+    <%= javascript_include_tag 'global' %>
+    <%= javascript_include_tag 'initializers' %>
+
   </body>
 </html>
