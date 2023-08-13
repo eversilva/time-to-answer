@@ -3,5 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /*
- *= require_tree ../../../vendor/assets/css/.
+ *= require_tree ../../../vendor/assets/stylesheets/.
 */
+
+header .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: .5rem
+}
+
+header .dropdown-item svg {
+    width: 1.3rem;
+    height: 1.3rem;
+}

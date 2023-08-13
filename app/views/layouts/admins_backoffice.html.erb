@@ -10,10 +10,37 @@
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'global' %>
+    <%= javascript_include_tag 'pooper.min' %>
+    <%= javascript_include_tag 'bootstrap.min' %>
+
   </head>
 
   <body>
-    <h1>Layouts / Admins Backoffice</h1>
-    <%= yield %>
+
+
+  
+    <header class="container py-2 d-flex justify-content-end">
+      <div class="dropdown">
+        <span class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          mock.email@gmail.com
+        </span>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <%= link_to destroy_admin_session_path, method: :delete, :class => "dropdown-item" do %>
+              <%= render_svg('logout.svg') %>
+              Sair
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+
+      <div class="container">
+        <%= yield %>
+      </div>
+
+    </main>
   </body>
 </html>
