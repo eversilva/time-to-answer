@@ -13,6 +13,7 @@
     --main-custom-gray: #c9c9cc;
     --main-custom-background: #0e1420;
     --main-custom-background-hover: #212936;
+    --main-custom-border-hover: #313946;
 }
 
 #content {
@@ -163,4 +164,29 @@ a {
 a:hover {
     color: var(--main-custom-background-hover);
     text-decoration: underline;
+}
+
+.btn svg {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.btn.btn-custom svg {
+    fill: var(--main-custom-white);
+}
+
+.btn.btn-custom, .btn.btn-custom:focus {
+    background-color: var(--main-custom-background);
+    border-color: var(--main-custom-border);
+    color: var(--main-custom-white);
+    padding: 0.25rem 0.75rem;
+}
+
+.btn.btn-custom:hover {
+    background-color: var(--main-custom-background-hover);
+}
+
+
+.form-control {
+    padding: 0.25rem 0.75rem;
 }
