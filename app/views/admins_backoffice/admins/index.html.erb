@@ -26,9 +26,9 @@
               data-bs-toggle="tooltip" 
               data-bs-placement="bottom" 
               data-bs-title="Editar">
-              <a href="#" class="btn btn-circle btn-primary">
+              <%= link_to edit_admins_backoffice_admin_path(admin),  class: "btn btn-circle btn-primary" do %>
                 <%= render_svg('edit_note') %>
-              </a>
+              <% end %>
             </div>
             <div 
               data-bs-toggle="tooltip" 
