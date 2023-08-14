@@ -16,6 +16,15 @@
     --main-custom-border-hover: #313946;
 }
 
+.logo a {
+    color: var(--main-custom-white);
+}
+
+.logo a:hover {
+    color: var(--main-custom-gray);
+    text-decoration: none;
+}
+
 #content {
     display: grid;
     grid-template-areas: "aside-menu main-content";
@@ -185,7 +194,6 @@ a:hover {
 .btn.btn-custom:hover {
     background-color: var(--main-custom-background-hover);
 }
-
 
 .form-control {
     padding: 0.25rem 0.75rem;
