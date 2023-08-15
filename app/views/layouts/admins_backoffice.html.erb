@@ -12,6 +12,8 @@
 
   <body>
 
+  <% active_feature = params[:controller].split('/').last %>
+
     <div id="content">
 
       <aside id="aside-menu">
@@ -29,7 +31,7 @@
                   Dashboard
                 <% end %>
               </li>
-              <li>
+              <li class="<%= 'active' if active_feature == 'admins'  %>">
                 <%= link_to admins_backoffice_admins_path do %>
                   <%= render_svg('group') %>
                   Administradores

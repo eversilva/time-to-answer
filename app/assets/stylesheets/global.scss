@@ -73,11 +73,13 @@
     transition: ease-in .2s background-color;
 }
 
-#aside-menu > .container ul li:hover {
+#aside-menu > .container ul li:hover,
+#aside-menu > .container ul li.active {
     background-color: var(--main-custom-background-hover);
 }
 
-#aside-menu > .container ul li:hover a {
+#aside-menu > .container ul li:hover a,
+#aside-menu > .container ul li.active a {
     color: var(--main-custom-gray);
 }
 
