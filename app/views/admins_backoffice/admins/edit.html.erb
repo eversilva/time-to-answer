@@ -12,6 +12,20 @@
   </ol>
 </nav>
 
+<% if @admin.errors.any? %>
+    <div id="errorToast" class="toast align-items-center text-bg-danger border-0 my-3" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+            <ul class="mb-0">
+                <%= @admin.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+<% end %>
 
 <%= form_with(model: [ :admins_backoffice, @admin ], local: true) do |form| %>
     <div class="container p-0">
