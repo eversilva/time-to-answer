@@ -9,6 +9,19 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   def edit
   end
 
+  def new 
+    @admin = Admin.new
+  end
+
+  def create
+    @admin = Admin.create(params_admin)
+    if @admin.save()
+      redirect_to admins_backoffice_admins_path, notice: "Adminstrador cadastrado com sucesso!"
+    else
+      render :edit
+    end
+  end
+
   def update    
     if @admin.update(params_admin)
       redirect_to admins_backoffice_admins_path, notice: "Adminstrador atualizado com sucesso!"
