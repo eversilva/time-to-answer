@@ -10,6 +10,12 @@
   </ol>
 </nav>
 
+<div class="d-flex justify-content-end">
+  <%= link_to '#', class: 'btn btn-custom' do %>
+    <%= render_svg('person_add') %> Adicionar
+  <% end %>
+</div>
+
 <table class="table table-sm">
   <thead>
     <tr>
@@ -36,7 +42,7 @@
               data-bs-toggle="tooltip" 
               data-bs-placement="bottom" 
               data-bs-title="Editar">
-              <%= link_to edit_admins_backoffice_admin_path(admin),  class: "btn btn-circle btn-light" do %>
+              <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn btn-circle btn-light" do %>
                 <%= render_svg('edit_note') %>
               <% end %>
             </div>
