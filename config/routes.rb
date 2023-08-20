@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   end
   namespace :admins_backoffice do
     get 'welcome/index'
-    resources :admins
+    resources :admins   # Administradores
+    resources :subjects # Assuntos
   end
 
   get 'inicio', to: 'website/welcome#index'
