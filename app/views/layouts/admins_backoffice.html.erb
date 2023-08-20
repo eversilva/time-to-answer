@@ -1,7 +1,9 @@
+<% active_feature = params[:controller].split('/').last %>
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Time to answer - Administrador backoffice</title>
+    <title>Time to Answer - Administrador </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,8 +13,6 @@
   </head>
 
   <body>
-
-  <% active_feature = params[:controller].split('/').last %>
 
     <div id="content">
 
