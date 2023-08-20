@@ -13,7 +13,7 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
     end
   
     def create
-      @subject = Admin.create(params_subject)
+      @subject = Subject.create(params_subject)
       if @subject.save()
         redirect_to admins_backoffice_subjects_path, notice: "Assunto cadastrado com sucesso!"
       else

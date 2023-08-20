@@ -1,0 +1,66 @@
+<h3>Assuntos</h3>
+
+<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to 'Página inicial', admins_backoffice_welcome_index_path  %>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Assuntos</li>
+
+  </ol>
+</nav>
+
+<div class="d-flex justify-content-end">
+  <%= link_to new_admins_backoffice_subject_path, class: 'btn btn-custom' do %>
+    <%= render_svg('person_add') %> Adicionar
+  <% end %>
+</div>
+
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Descrição</th>
+      <th></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+
+    <% @subjects.each do |subject| %>
+
+      <tr>
+        <td><%= subject.id %></td>
+        <td>
+          <%= subject.description %>
+        </td>
+        <td>
+          <div class="d-flex justify-content-end gap-1">
+            <div 
+              data-bs-toggle="tooltip" 
+              data-bs-placement="bottom" 
+              data-bs-title="Editar">
+              <%= link_to edit_admins_backoffice_subject_path(subject), class: "btn btn-circle btn-light" do %>
+                <%= render_svg('edit_note') %>
+              <% end %>
+            </div>
+            <div 
+              data-bs-toggle="tooltip" 
+              data-bs-placement="bottom" 
+              data-bs-title="Apagar">
+              <%= link_to admins_backoffice_subject_path(subject), class: "btn btn-circle btn-danger", method: :delete, data: { confirm: "Deseja realmente excluir o assunto #{subject.description}?" } do %>
+                <%= render_svg('delete') %>
+              <% end %>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+    <% end %>
+
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-center">
+  <%= paginate @subjects %>
+</div>
