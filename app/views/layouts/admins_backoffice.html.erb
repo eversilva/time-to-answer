@@ -44,23 +44,23 @@
 
       <main id="main-content">
 
-          <header id="nav-header" class="position-fixed bg-light">
-            <div class="container py-2 d-flex justify-content-end">
-              <div class="dropdown">
-                <span class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <%= current_admin.email %>
-                </span>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li>
-                    <%= link_to destroy_admin_session_path, method: :delete, :class => "dropdown-item" do %>
-                      <%= render_svg('logout') %>
-                      Sair
-                    <% end %>
-                  </li>
-                </ul>
-              </div>
+        <header id="nav-header" class="position-fixed bg-light">
+          <div class="container py-2 d-flex justify-content-end">
+            <div class="dropdown">
+              <span class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= current_admin.email %>
+              </span>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <%= link_to destroy_admin_session_path, method: :delete, :class => "dropdown-item" do %>
+                    <%= render_svg('logout') %>
+                    Sair
+                  <% end %>
+                </li>
+              </ul>
             </div>
-          </header>
+          </div>
+        </header>
 
         <div class="container">
           <%= yield %>
