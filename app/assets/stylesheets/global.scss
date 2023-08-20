@@ -12,6 +12,7 @@
     --main-custom-white: #f1f3f3;
     --main-custom-gray: #c9c9cc;
     --main-custom-background: #0e1420;
+    --main-custom-border: #0e0410;
     --main-custom-background-hover: #212936;
     --main-custom-border-hover: #313946;
 }
@@ -209,4 +210,29 @@ a:hover {
 
 .form-control {
     padding: 0.25rem 0.75rem;
+}
+
+.page-link {
+    padding: 0.25rem 0.50rem;
+    color: var(--main-custom-background);
+    border-color: var(--main-custom-gray);
+}
+
+.page-item.active .page-link {
+    background-color: var(--main-custom-background);
+    color: var(--main-custom-white);
+    border-color: var(--main-custom-border);
+}
+
+.page-link:hover {
+    text-decoration: none;
+    color: var(--main-custom-background-hover);
+    border-color: var(--main-custom-gray);
+    background-color: var(--main-custom-white);
+}
+
+.page-link.active:hover {
+    text-decoration: none;
+    color: var(--main-custom-background-hover);
+    border-color: var(--main-custom-border);
 }
