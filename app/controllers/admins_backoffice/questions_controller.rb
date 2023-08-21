@@ -15,7 +15,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
     def create
       @question = Question.create(params_question)
       if @question.save()
-        redirect_to admins_backoffice_questions_path, notice: "Pergunta cadastrada com sucesso!"
+        redirect_to admins_backoffice_questions_path, notice: "Questão cadastrada com sucesso!"
       else
         render :edit
       end
@@ -23,7 +23,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   
     def update    
       if @question.update(params_question)
-        redirect_to admins_backoffice_questions_path, notice: "Pergunta atualizada com sucesso!"
+        redirect_to admins_backoffice_questions_path, notice: "Questão atualizada com sucesso!"
       else
         render :edit
       end
@@ -31,7 +31,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   
     def destroy
       if @question.destroy
-        redirect_to admins_backoffice_questions_path, notice: "Pergunta deletada com sucesso!"
+        redirect_to admins_backoffice_questions_path, notice: "Questão deletada com sucesso!"
       else
         render :index
       end

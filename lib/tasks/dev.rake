@@ -14,7 +14,7 @@ namespace :dev do
       show_spinner("Cadastrando o usuário padrão...") { %x(rails dev:add_default_user) }
 
       show_spinner("Cadastrando os assuntos padrão...") { %x(rails dev:add_subjects) }
-      show_spinner("Cadastrando e perguntas e respostas...") { %x(rails dev:add_answers_and_subjects) }
+      show_spinner("Cadastrando e questões e respostas...") { %x(rails dev:add_answers_and_subjects) }
     else
       puts "Você não está no ambiente de desenvolvimento"
     end
@@ -59,7 +59,7 @@ namespace :dev do
       end
   end
 
-  desc "Adiciona perguntas e respostas"
+  desc "Adiciona questões e respostas"
     task add_answers_and_subjects: :environment do
       rand(5..10).times do |i|
         Subject.all.each do |subject|
