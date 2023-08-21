@@ -21,6 +21,7 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Descrição</th>
+      <th scope="col">Assunto</th>
       <th></th>
     </tr>
   </thead>
@@ -33,6 +34,9 @@
         <td><%= question.id %></td>
         <td>
           <%= question.description %>
+        </td>
+        <td>
+          <%= question.subject.description %>
         </td>
         <td>
           <div class="d-flex justify-content-end gap-1">
