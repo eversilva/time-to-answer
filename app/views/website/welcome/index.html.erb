@@ -1,2 +1,8 @@
-<h1>Website::Welcome#index</h1>
-<p>Find me in app/views/website/welcome/index.html.erb</p>
+<div class="container">
+
+    <%= link_to admins_backoffice_admins_path, class: 'btn btn-custom' do %>
+        <%= render_svg('group') %>
+        Administradores
+    <% end %>
+
+</div>
