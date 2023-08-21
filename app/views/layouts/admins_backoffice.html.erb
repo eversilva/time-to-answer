@@ -43,6 +43,12 @@
                   Assuntos
                 <% end %>
               </li>
+              <li class="<%= 'active' if active_feature == 'questions'  %>">
+                <%= link_to admins_backoffice_questions_path do %>
+                  <%= render_svg('psychology_alt') %>
+                  Questões
+                <% end %>
+              </li>
             </ul>
           </nav>
         </div>

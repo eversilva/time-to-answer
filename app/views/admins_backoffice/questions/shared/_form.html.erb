@@ -1,0 +1,57 @@
+<h3><%= action_message %></h3>
+
+<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to 'Página inicial', admins_backoffice_welcome_index_path  %>
+    </li>    
+    <li class="breadcrumb-item">
+        <%= link_to 'Questões', admins_backoffice_questions_path  %>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><%= action_message %></li>
+  </ol>
+</nav>
+
+<% if @question.errors.any? %>
+    <div id="errorToast" class="toast align-items-center text-bg-danger border-0 my-3" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+            <ul class="mb-0">
+                <%= @question.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+<% end %>
+
+<% if @question.errors.any? %>
+    <div id="errorToast" class="toast align-items-center text-bg-danger border-0 my-3" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+            <ul class="mb-0">
+                <%= @question.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+<% end %>
+
+<%= form_with(model: [ :admins_backoffice, @question ], local: true) do |form| %>
+    <div class="container p-0">
+
+        <div class="mb-3">
+            <%= form.label :description, class: "form-label fw-bold" %>
+            <%= form.text_field :description, class: "form-control", placeholder: "Descrição" %>
+        </div>
+
+        <button class="btn btn-custom">
+            <%= render_svg('send') %> Salvar
+        </button>
+    </div>
+<% end %>
