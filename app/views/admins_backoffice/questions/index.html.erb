@@ -19,9 +19,9 @@
 <table class="table table-sm">
   <thead>
     <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Descrição</th>
-      <th scope="col">Assunto</th>
+      <th scope="col"><%= @questions.model.human_attribute_name(:id) %></th>
+      <th scope="col"><%= @questions.model.human_attribute_name(:description) %></th>
+      <th scope="col"><%= @questions.model.human_attribute_name(:subject) %></th>
       <th></th>
     </tr>
   </thead>
