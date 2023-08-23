@@ -19,8 +19,8 @@
 <table class="table table-sm">
   <thead>
     <tr>
-      <th scope="col"><%= @admins.model.human_attribute_name(:id) %></th>
-      <th scope="col"><%= @admins.model.human_attribute_name(:email) %></th>
+      <th scope="col"><%= translate_attribute(@admins, :id) %></th>
+      <th scope="col"><%= translate_attribute(@admins, :email) %></th>
       <th></th>
     </tr>
   </thead>
