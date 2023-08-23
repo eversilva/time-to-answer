@@ -48,7 +48,7 @@
               data-bs-toggle="tooltip" 
               data-bs-placement="bottom" 
               data-bs-title="Apagar">
-              <%= link_to admins_backoffice_subject_path(subject), class: "btn btn-circle btn-danger", method: :delete, data: { confirm: "Deseja realmente excluir o assunto #{subject.description}?" } do %>
+              <%= link_to admins_backoffice_subject_path(subject), class: "btn btn-circle btn-danger", method: :delete, data: { confirm: t('messages.confirm.delete', item: subject.description.truncate(20)) } do %>
                 <%= render_svg('delete') %>
               <% end %>
             </div>

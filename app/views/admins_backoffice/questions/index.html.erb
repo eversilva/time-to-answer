@@ -52,7 +52,7 @@
               data-bs-toggle="tooltip" 
               data-bs-placement="bottom" 
               data-bs-title="Apagar">
-              <%= link_to admins_backoffice_question_path(question), class: "btn btn-circle btn-danger", method: :delete, data: { confirm: "Deseja realmente excluir a questão de Id: #{question.id}?" } do %>
+              <%= link_to admins_backoffice_question_path(question), class: "btn btn-circle btn-danger", method: :delete, data: { confirm: t('messages.confirm.delete', item: question.description.truncate(20)) } do %>
                 <%= render_svg('delete') %>
               <% end %>
             </div>

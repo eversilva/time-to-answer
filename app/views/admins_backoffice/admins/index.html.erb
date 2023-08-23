@@ -50,7 +50,7 @@
               data-bs-toggle="tooltip" 
               data-bs-placement="bottom" 
               data-bs-title="Apagar">
-              <%= link_to admins_backoffice_admin_path(admin), class: "btn btn-circle btn-danger", method: :delete, data: { confirm: "Deseja realmente excluir o administrador #{admin.email}?" } do %>
+              <%= link_to admins_backoffice_admin_path(admin), class: "btn btn-circle btn-danger", method: :delete, data: { confirm: t('messages.confirm.delete', item: admin.email) } do %>
                 <%= render_svg('delete') %>
               <% end %>
             </div>
