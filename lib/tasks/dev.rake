@@ -62,7 +62,7 @@ namespace :dev do
   desc "Adiciona questões e respostas"
     task add_answers_and_subjects: :environment do
       amount_of_subjects = rand(5..10)
-      amount_of_subjects.times do |i|
+      amount_of_subjects.times do
         Subject.all.each do |subject|
           params = {
             question: {
