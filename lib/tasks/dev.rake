@@ -61,11 +61,30 @@ namespace :dev do
 
   desc "Adiciona questões e respostas"
     task add_answers_and_subjects: :environment do
-      rand(5..10).times do |i|
+      amount_of_subjects = rand(5..10)
+      amount_of_subjects.times do |i|
         Subject.all.each do |subject|
+          params = {
+            question: {
+              description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
+              subject: subject,
+              answers_attributes: [],
+            }
+          }
+
+          amount_of_answers = rand(2..6)
+          index_of_correct_answer = rand(amount_of_answers)
+
+          amount_of_answers.times do |i|
+            params[:question][:answers_attributes].push({
+              description: Faker::Lorem.paragraph, 
+              correct: i == index_of_correct_answer ? true : false
+            })
+          end
+
+
           Question.create!(
-            description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
-            subject: subject,
+            params[:question]
           )
       end
     end
