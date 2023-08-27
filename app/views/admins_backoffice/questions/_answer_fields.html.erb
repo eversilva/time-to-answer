@@ -1,0 +1,9 @@
+<div class="nested-fields">
+    <div class="d-flex align-items-baseline gap-1 my-2">
+        <%= f.label :description, class: 'form-label' %>
+        <%= f.text_field :description, class: 'form-control' %>
+        <%= f.check_box :correct %> Correta
+
+        <%= link_to_remove_association "Remover", f %>
+    </div>
+</div>

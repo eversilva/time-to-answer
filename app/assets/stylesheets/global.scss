@@ -159,13 +159,6 @@ table svg {
     width: 1.3rem;
 }
 
-table .btn {
-    width: 2rem;
-    height: 2rem;
-    padding: 0;
-}
-
-
 table .btn.btn-danger svg {
     fill: var(--main-custom-white);
 }
@@ -188,11 +181,6 @@ a:hover {
     text-decoration: none;
 }
 
-.btn svg {
-    width: 1.4rem;
-    height: 1.4rem;
-}
-
 .btn.btn-custom svg {
     fill: var(--main-custom-white);
 }
@@ -206,6 +194,18 @@ a:hover {
 
 .btn.btn-custom:hover {
     background-color: var(--main-custom-background-hover);
+}
+
+.btn.btn-circle, .btn.btn-circle:focus {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    line-height: 1.8rem;
+}
+
+.btn svg {
+    width: 1.4rem;
+    height: 1.4rem;
 }
 
 .form-control {

@@ -55,6 +55,24 @@
             <%= form.collection_select :subject_id, @subjects, :id, :description, {}, { class: 'form-select' } %>
         </div>
 
+        <%= form.label :answers, class: "form-label fw-bold" %>
+        <div id="answers">
+            <%= form.fields_for :answers do |answer| %>
+                <%= render partial: "answer_fields", locals: { f: answer } %>
+            <% end %>
+
+            <div class="d-flex justify-content-end">
+                <%= link_to_add_association form, :answers, class: 'btn btn-custom btn-circle' do %>
+                    <div 
+                        data-bs-toggle="tooltip" 
+                        data-bs-placement="left" 
+                        data-bs-title="Adicionar resposta">
+                    <%= render_svg('add') %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+
         <button class="btn btn-custom">
             <%= render_svg('send') %> Salvar
         </button>

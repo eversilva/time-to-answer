@@ -12,3 +12,6 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery.min
+//= require cocoon
+console.log('application')
