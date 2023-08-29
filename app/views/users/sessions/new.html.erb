@@ -1,26 +1,45 @@
-<h2>Log in - Users</h2>
+<h2 class="mb-3 lead text-center">Log in - Users</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field my-2">
+    <%= f.label :email, class: 'form-label' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="field my-2">
+    <%= f.label :password, class: 'form-label' %><br />
+    <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="field form-check my-3">
+      <%= f.check_box :remember_me, class: "form-check-input" %>
+      <%= f.label :remember_me, class: "form-check-label" %>
     </div>
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="d-grid">
+      <%= f.submit "Log-in", class: 'btn btn-custom' %>
+    </div>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<div class="d-flex flex-column align-items-center mt-3">
+  <%= render "users/shared/links" %>
+</div>
+
+<% if flash %>
+  <% flash.each do |key, value| %>
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 11">
+      <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+            <%= value %>
+        </div>
+          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
