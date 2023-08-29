@@ -1,0 +1,33 @@
+<% active_feature = params[:controller].split('/').last %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Time to Answer - Administrador </title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application' %>
+    <%= stylesheet_link_tag    'global' %>
+
+  </head>
+
+  <body>
+
+    <div 
+        class="d-flex align-items-center justify-content-center min-vh-100 square-animated-background">
+        <div 
+            class="mw-50 p-5 border rounded-3 shadow" 
+            style="background-color: var(--main-custom-white)">
+            <%= yield %>
+        </div>
+    </div>
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'pooper.min' %>
+    <%= javascript_include_tag 'bootstrap.min' %>
+    <%= javascript_include_tag 'global' %>
+    <%= javascript_include_tag 'initializers' %>
+
+  </body>
+</html>
