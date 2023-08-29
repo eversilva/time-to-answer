@@ -11,7 +11,7 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w( global.css global.js bootstrap.css bootstrap.min.js pooper.min.js jquery.min.js cocoon.js initializers.js )
+Rails.application.config.assets.precompile += %w( user.css admin.css global.css global.js bootstrap.css bootstrap.min.js pooper.min.js jquery.min.js cocoon.js initializers.js )
 
 # renders svg from app/assets/icons
 Rails.application.config.assets.precompile += %w( '.svg' )  
