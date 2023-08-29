@@ -1,8 +1,13 @@
 <div class="container">
 
-    <%= link_to admins_backoffice_admins_path, class: 'btn btn-custom' do %>
+    <%= link_to admin_session_path, class: 'btn btn-custom' do %>
         <%= render_svg('group') %>
         Administradores
+    <% end %>
+
+    <%= link_to user_session_path, class: 'btn btn-custom' do %>
+        <%= render_svg('group') %>
+        Usuários
     <% end %>
 
 </div>
