@@ -7,12 +7,45 @@
 
     <%= stylesheet_link_tag    'application' %>
     <%= stylesheet_link_tag    'global' %>
+    <%= stylesheet_link_tag    'user' %>
 
   </head>
 
   <body>
+
+  <header class="bg-light">
+    <div class="container-fluid py-2 d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="#">Time to Answer</a>
+      
+      <% if user_signed_in? %>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+            <button class="btn btn-custom" type="submit">
+              <%= render_svg('search') %>
+            </button>
+        </form>
+        <div class="dropdown">
+          <span class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_user&.email %>
+          </span>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete, :class => "dropdown-item" do %>
+                <%= render_svg('logout') %>
+                Sair
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </header>
+
+  <main class="container">
     
     <%= yield %>
+
+  </main>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'pooper.min' %>

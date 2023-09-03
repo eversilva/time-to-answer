@@ -1,50 +1,48 @@
-<div class="container">
 
-    <% if user_signed_in? %>
+<% if user_signed_in? %>
 
-    <div class="accordion accordion-flush" id="accordion-question">
+<div class="accordion accordion-flush" id="accordion-question">
 
-        <h2>Lista de questões</h2>
+    <h2>Lista de questões</h2>
 
-        <% @questions.each_with_index do |question, index| %>
-            <div class="accordion-item">
-                <h3 class="accordion-header" id="heading-<%= index %>">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= index %>" aria-expanded="false" aria-controls="collapse-<%= index %>">
-                        <%= question.description %>
-                    </button>
-                </h3>
-                <div id="collapse-<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading-<%= index %>" data-bs-parent="#accordion-question">
-                    <div class="accordion-body">
-                        <ul class="list-group list-group-flush">
-                            <h4 class="fs-6">Respostas</h4>
-                            <% question.answers.each do |answer| %>
-                                <li class="list-group-item">
-                                    <%= answer.description %>
-                                </li>
-                            <% end %>
-                        </ul>
-                    </div>
+    <% @questions.each_with_index do |question, index| %>
+        <div class="accordion-item">
+            <h3 class="accordion-header" id="heading-<%= index %>">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= index %>" aria-expanded="false" aria-controls="collapse-<%= index %>">
+                    <%= question.description %>
+                </button>
+            </h3>
+            <div id="collapse-<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading-<%= index %>" data-bs-parent="#accordion-question">
+                <div class="accordion-body">
+                    <ul class="list-group list-group-flush">
+                        <h4 class="fs-6">Respostas</h4>
+                        <% question.answers.each do |answer| %>
+                            <li class="list-group-item">
+                                <%= answer.description %>
+                            </li>
+                        <% end %>
+                    </ul>
                 </div>
             </div>
-        <% end %>
-
-        <div class="mt-3 d-flex justify-content-center">
-            <%= paginate @questions %>
         </div>
-    </div>
-
-    <% else %>
-
-        <%= link_to admin_session_path, class: 'btn btn-custom' do %>
-            <%= render_svg('group') %>
-            Administradores
-        <% end %>
-
-        <%= link_to user_session_path, class: 'btn btn-custom' do %>
-            <%= render_svg('group') %>
-            Usuários
-        <% end %>
-
     <% end %>
 
+    <div class="mt-3 d-flex justify-content-center">
+        <%= paginate @questions %>
+    </div>
 </div>
+
+<% else %>
+
+    <%= link_to admins_backoffice_welcome_index_path, class: 'btn btn-custom' do %>
+        <%= render_svg('group') %>
+        Administradores
+    <% end %>
+
+    <%= link_to user_session_path, class: 'btn btn-custom' do %>
+        <%= render_svg('group') %>
+        Usuários
+    <% end %>
+
+<% end %>
+
