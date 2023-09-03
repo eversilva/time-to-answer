@@ -14,16 +14,17 @@
   <body>
 
   <header class="bg-light">
-    <div class="container-fluid py-2 d-flex justify-content-between align-items-center">
-      <a class="navbar-brand" href="#">Time to Answer</a>
+    <div class="container py-2 d-flex justify-content-between align-items-center">
+      <%= link_to 'Time to Answer', root_path, class: 'navbar-brand' %>
       
       <% if user_signed_in? %>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-            <button class="btn btn-custom" type="submit">
-              <%= render_svg('search') %>
-            </button>
-        </form>
+        <%= form_with(url: website_search_path, local: true, method: :get, class: 'd-flex gap-1' ) do |form| %>
+          <%= form.text_field :term, class: 'form-control', placeholder: 'Pesquisar' %>
+          <button class="btn btn-custom">
+            <%= render_svg('search') %>
+          </button>
+        <%  end %>
+
         <div class="dropdown">
           <span class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <%= current_user&.email %>
