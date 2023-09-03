@@ -8,18 +8,17 @@
     <%= stylesheet_link_tag    'application' %>
     <%= stylesheet_link_tag    'global' %>
 
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'global' %>
-
   </head>
 
   <body>
-    <div class="container">
-    <h1>Time to Answer</h1>
-    <hr class="divider"/>
     
     <%= yield %>
 
-    </div>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'pooper.min' %>
+    <%= javascript_include_tag 'bootstrap.min' %>
+    <%= javascript_include_tag 'global' %>
+    <%= javascript_include_tag 'initializers' %>
+
   </body>
 </html>

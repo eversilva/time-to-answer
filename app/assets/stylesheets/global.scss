@@ -6,6 +6,10 @@
  *= require_tree ../../../vendor/assets/stylesheets/.
 */
 
+body {
+    overflow-y: scroll;
+}
+
 .logo a {
     color: var(--main-custom-white);
 }
@@ -226,8 +230,25 @@ a:hover {
     border-color: var(--main-custom-border);
 }
 
+.accordion.accordion-flush .accordion-item {
+    border-top: none;
+}
 
+.accordion-button {
+    box-shadow: none !important;
+    padding: .5rem var(--bs-accordion-btn-padding-x)
+}
 
+.accordion-button::after {
+    height: 1rem;
+    width: 1rem;
+    background-size: 1rem 1rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--bs-gray-100);
+    color: var(--bs-gray-800);
+}
 
 
 
