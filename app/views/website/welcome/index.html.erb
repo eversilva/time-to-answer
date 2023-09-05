@@ -1,9 +1,9 @@
 
 <% if user_signed_in? %>
 
-<div class="accordion accordion-flush" id="accordion-question">
+<h2>Lista de questões</h2>
 
-    <h2>Lista de questões</h2>
+<div class="accordion accordion-flush" id="accordion-question">
 
     <% @questions.each_with_index do |question, index| %>
         <div class="accordion-item">

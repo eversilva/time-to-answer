@@ -1,5 +1,6 @@
 class Website::SearchController < WebsiteController
     def questions
-        @question = Question.all.page(params[:page]).per(10)
+        @questions = Question.includes(:answers)
+                            .where('lower(description) LIKE ?', "%#{params[:term].downcase}%")
     end
 end
