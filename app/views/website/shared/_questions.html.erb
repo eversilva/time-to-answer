@@ -13,9 +13,9 @@
                             <h4 class="fs-6">Respostas</h4>
                             <% question.answers.each do |answer| %>
                                 <li class="list-group-item">
-                                    <div class="form-check">
-                                        <%= radio_button_tag 'answer', answer.id %>
-                                        <label class="form-check-label" for="answer_<%= answer.id %>">
+                                    <div class="form-check px-0">
+                                        <%= radio_button_tag 'answer_id', answer.id %>
+                                        <label class="form-check-label mx-2" for="answer_id_<%= answer.id %>">
                                             <%= answer.description %>
                                         </label>
                                     </div>
