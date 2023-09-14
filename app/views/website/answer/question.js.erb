@@ -1,1 +1,13 @@
-console.log('<%= @answer.correct ? 'Acertou' : 'Errou' %>')
+isTheCorrectAnswer = <%= @answer.correct %>
+submitButton = document.querySelector('#submit_button_<%= @answer.question_id %>')
+
+if (isTheCorrectAnswer) {
+    submitButton.classList.add('btn-success')
+    submitButton.classList.remove('btn-danger')
+    submitButton.classList.remove('btn-default')
+}
+else {
+    submitButton.classList.add('btn-danger')
+    submitButton.classList.remove('btn-success')
+    submitButton.classList.remove('btn-default')
+}
