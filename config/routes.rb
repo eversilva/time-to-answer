@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   namespace :website do
     get  'welcome/index'
-    get  'search', to: 'search#questions' 
+    get  'search', to: 'search#questions'
+    get  'subject/:subject_id', to: 'search#subject', as: 'search_subject' 
     post 'answer', to: 'answer#question'
   end
   namespace :users_backoffice do
