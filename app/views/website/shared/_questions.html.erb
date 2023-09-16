@@ -11,7 +11,7 @@
                     <div class="accordion-body">
                         <h5>Assunto</h5>
                         <mark class="mb-2">
-                            <%= link_to question.subject.description, website_search_subject_path(question.subject_id) %>
+                            <%= link_to "#{question.subject.description } - #{question.subject.questions_count}", website_search_subject_path(question.subject_id) %>
                         </mark>
 
                         <h5 class="mt-2">Opções</h5>
