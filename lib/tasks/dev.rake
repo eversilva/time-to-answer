@@ -50,18 +50,18 @@ namespace :dev do
   end
 
   desc "Adiciona os assuntos padrão"
-    task add_subjects: :environment do
-      file_name = 'subjects.txt'
-      file_path = File.join(DEFAULT_FILES_PATH, file_name)
+  task add_subjects: :environment do
+    file_name = 'subjects.txt'
+    file_path = File.join(DEFAULT_FILES_PATH, file_name)
 
-      File.open(file_path, 'r').each do |line|
-        Subject.create!(description: line.strip)
-      end
+    File.open(file_path, 'r').each do |line|
+      Subject.create!(description: line.strip)
+    end
   end
 
   desc "Adiciona questões e respostas"
-    task add_answers_and_subjects: :environment do
-      amount_of_subjects = rand(5..10)
+  task add_answers_and_subjects: :environment do
+    amount_of_subjects = rand(5..10)
       amount_of_subjects.times do
         Subject.all.each do |subject|
           params = {
@@ -86,6 +86,15 @@ namespace :dev do
           Question.create!(
             params[:question]
           )
+      end
+    end
+  end
+
+  desc "Reinicia o contador de questões nos assuntos"
+  task reset_questions_count_on_subjects: :environment do
+    show_spinner('Reiniciando contador de questões nos assuntos...') do
+      Subject.find_each do |subject|
+        Subject.reset_counters(subject.id, :questions)
       end
     end
   end
