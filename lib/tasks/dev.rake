@@ -20,7 +20,7 @@ namespace :dev do
     end
   end
 
-  desc "Adiciona o adminstrador padrão"
+  desc "Adiciona o administrador padrão"
   task add_default_admin: :environment do
     Admin.create!(
       email: 'everson.admin@gmail.com',
@@ -29,7 +29,7 @@ namespace :dev do
     )
   end
 
-  desc "Adiciona o adminstradores falsos para teste"
+  desc "Adiciona o administradores falsos para teste"
   task add_fake_admins: :environment do
     10.times do |i|
       Admin.create!(
