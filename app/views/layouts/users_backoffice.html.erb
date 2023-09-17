@@ -20,6 +20,12 @@
         </span>
         <ul class="dropdown-menu dropdown-menu-end">
           <li>
+            <%= link_to users_backoffice_welcome_index_path, :class => "dropdown-item #{params[:controller] == 'users_backoffice/welcome' ? 'disabled' : ''}" do %>
+              <%= render_svg('group') %>
+              Perfil
+            <% end %>
+          </li>
+          <li>
             <%= link_to destroy_user_session_path, method: :delete, :class => "dropdown-item" do %>
               <%= render_svg('logout') %>
               Sair

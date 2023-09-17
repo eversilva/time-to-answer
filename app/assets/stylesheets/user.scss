@@ -2,3 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.dropdown-item svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.dropdown-item.disabled svg {
+    fill: var(--bs-dropdown-link-disabled-color);
+}
