@@ -1,0 +1,34 @@
+<header class="bg-light">
+    <div class="container py-2 d-flex justify-content-between align-items-center">
+        <%= link_to 'Time to Answer', root_path, class: 'navbar-brand' %>
+        
+        <% if user_signed_in? %>
+        <%= form_with(url: website_search_path, local: true, method: :get, class: 'd-flex gap-1' ) do |form| %>
+            <%= form.text_field :term, class: 'form-control', placeholder: 'Pesquisar' %>
+            <button class="btn btn-custom">
+            <%= render_svg('search') %>
+            </button>
+        <%  end %>
+
+        <div class="dropdown">
+            <span class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_user&.email %>
+            </span>
+            <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+                <%= link_to users_backoffice_welcome_index_path, :class => "dropdown-item #{params[:controller] == 'users_backoffice/welcome' ? 'disabled' : ''}" do %>
+                <%= render_svg('group') %>
+                Perfil
+                <% end %>
+            </li>
+            <li>
+                <%= link_to destroy_user_session_path, method: :delete, :class => "dropdown-item" do %>
+                <%= render_svg('logout') %>
+                Sair
+                <% end %>
+            </li>
+            </ul>
+        </div>
+        <% end %>
+    </div>
+</header>
