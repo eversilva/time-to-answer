@@ -1,13 +1,14 @@
 class UsersBackoffice::ProfileController < UsersBackofficeController
     before_action :verify_password, only: [:update]
     before_action :set_user
-    
+
     def edit
         
     end
 
     def update
         if @user.update(params_user)
+            sign_in(@user, bypass: true)
             redirect_to users_backoffice_welcome_index_path, notice: "Usuário atualizado com sucesso!"
         else
             render :edit
