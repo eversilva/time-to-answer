@@ -1,5 +1,50 @@
-<h1>UsersBackoffice::Profile#edit</h1>
+<h3>Editar perfil</h3>
 
-<span>
-  <%= link_to 'Log-off - User', destroy_user_session_path, method: :delete %>
-</span>
+<% if @user.errors.any? %>
+    <div id="errorToast" class="toast align-items-center text-bg-danger border-0 my-3" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+            <ul class="mb-0">
+                <%= @user.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+<% end %>
+
+<%= form_with(url: users_backoffice_profile_path, model: @user, local: true) do |form| %>
+    <div class="container p-0">
+
+        <div class="mb-3">
+            <%= form.label :first_name, class: "form-label fw-bold" %>
+            <%= form.text_field :first_name, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+            <%= form.label :last_name, class: "form-label fw-bold" %>
+            <%= form.text_field :last_name, class: "form-control"%>
+        </div>
+
+        <div class="mb-3">
+            <%= form.label :email, class: "form-label fw-bold" %>
+            <%= form.text_field :email, class: "form-control", readonly: true, disabled: true %>
+        </div>
+
+        <div class="mb-3">
+            <%= form.label :password, class: "form-label fw-bold" %>
+            <%= form.password_field :password, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+            <%= form.label :password_confirmation, class: "form-label fw-bold" %>
+            <%= form.password_field :password_confirmation, class: "form-control" %>
+        </div>
+
+        <button class="btn btn-custom">
+            <%= render_svg('send') %> Salvar
+        </button>
+    </div>
+<% end %>  
