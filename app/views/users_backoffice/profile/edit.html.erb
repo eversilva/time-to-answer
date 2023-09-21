@@ -33,6 +33,23 @@
             <%= form.text_field :email, class: "form-control", readonly: true, disabled: true %>
         </div>
 
+        <%= form.fields_for :user_profile do |form_profile| %>
+            <div class="mb-3">
+                <%= form_profile.label :address, class: "form-label fw-bold" %>
+                <%= form_profile.text_field :address, class: "form-control" %>
+            </div>
+
+            <div class="mb-3">
+                <%= form_profile.label :gender, class: "form-label fw-bold" %>
+                <%= form_profile.text_field :gender, class: "form-control" %>
+            </div>
+
+            <div class="mb-3">
+                <%= form_profile.label :birthdate, class: "form-label fw-bold" %>
+                <%= form_profile.date_select :birthdate, class: "form-control" %>
+            </div>
+        <% end %>
+
         <div class="mb-3">
             <%= form.label :password, class: "form-label fw-bold" %>
             <%= form.password_field :password, class: "form-control" %>
