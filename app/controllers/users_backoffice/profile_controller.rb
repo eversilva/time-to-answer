@@ -23,7 +23,11 @@ class UsersBackoffice::ProfileController < UsersBackofficeController
 
     def params_user
         params.require(:user)
-            .permit(:first_name, :last_name, :password, :password_confirmation, user_profile_attributes: [:address, :gender, :birthdate])
+            .permit(:first_name, 
+                    :last_name, 
+                    :password, 
+                    :password_confirmation, 
+                    user_profile_attributes: [:id, :address, :gender, :birthdate])
     end
 
     def verify_password
