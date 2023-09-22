@@ -42,11 +42,12 @@
             <div class="mb-3">
                 <%= form_profile.label :gender, class: "form-label fw-bold" %>
                 <%= form_profile.text_field :gender, class: "form-control" %>
+
             </div>
 
             <div class="mb-3">
                 <%= form_profile.label :birthdate, class: "form-label fw-bold" %>
-                <%= form_profile.date_select :birthdate, class: "form-control" %>
+                <%= form_profile.date_field :birthdate, class: "form-control" %>
             </div>
         <% end %>
 
