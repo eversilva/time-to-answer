@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
 
   get 'inicio', to: 'website/welcome#index'
+  get 'admin', to: 'admins_backoffice/welcome#index'
 
   root to: 'website/welcome#index'
 end
