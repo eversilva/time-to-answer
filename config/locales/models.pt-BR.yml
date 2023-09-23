@@ -23,9 +23,18 @@
         updated_at: Atualizado em
       user:
         id: Id
+        first_name: Nome
+        last_name: Sobrenome
         email: Usuário
+        password: Senha
+        password_confirmation: Confirmação de senha
         created_at: Criado em
         updated_at: Atualizado em
+      user_profile:
+        id: Id
+        gender: Gênero
+        birthdate: Data de nascimento
+        address: Endereço
       subject:
         id: Id
         description: Descrição
