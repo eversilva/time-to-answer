@@ -1,5 +1,24 @@
 <h3>Editar perfil</h3>
 
+<!-- Modal -->
+<div class="modal modal-sm fade" id="photoProfileModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="photoProfileModalBackdropLabel">Editar foto de perfil</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-success">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <% if @user.errors.any? %>
     <div id="errorToast" class="toast align-items-center text-bg-danger border-0 my-3" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
