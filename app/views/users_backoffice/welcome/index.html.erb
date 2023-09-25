@@ -1,4 +1,8 @@
-<h1>UsersBackoffice::Welcome#index</h1>
+<h1>Bem-vindo, <%= current_user.full_name %>!</h1>
+
+<div class="position-relative my-3 rounded" style="width: 150px; height: 150px; overflow: hidden; cursor: pointer">
+    <%= image_tag avatar_url, class: 'position-absolute top-50 start-50 translate-middle w-100' %>
+</div>
 
 <span>
   <%= link_to 'Log-off - User', destroy_user_session_path, method: :delete %>

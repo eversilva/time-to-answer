@@ -27,7 +27,7 @@ class UsersBackoffice::ProfileController < UsersBackofficeController
                     :last_name, 
                     :password, 
                     :password_confirmation, 
-                    user_profile_attributes: [:id, :address, :gender, :birthdate])
+                    user_profile_attributes: [:id, :address, :gender, :birthdate, :avatar])
     end
 
     def verify_password

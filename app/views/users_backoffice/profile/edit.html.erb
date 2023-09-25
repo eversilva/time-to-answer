@@ -8,13 +8,19 @@
         <h1 class="modal-title fs-5" id="photoProfileModalBackdropLabel">Editar foto de perfil</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-success">Salvar</button>
-      </div>
+      <%= form_with(url: users_backoffice_profile_path, model: current_user, local: true) do |form| %>
+        <div class="modal-body">
+            <%= form.fields_for :user_profile do |form_profile| %>
+                <div class="mb-3">
+                    <%= form_profile.label :avatar, class: "form-label fw-bold" %>
+                    <%= form_profile.file_field :avatar, class: "form-control" %>
+                </div>
+            <% end %>
+        </div>
+        <div class="modal-footer">
+            <%= form.submit 'Salvar', class: 'btn btn-success' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -33,6 +39,10 @@
         </div>
     </div>
 <% end %>
+
+<div class="position-relative my-3 rounded" style="width: 100px; height: 100px; overflow: hidden; cursor: pointer" data-bs-toggle="modal" data-bs-target="#photoProfileModal">
+    <%= image_tag avatar_url, class: 'position-absolute top-50 start-50 translate-middle w-100', 'data-bs-toggle': "tooltip", 'data-bs-placement': "right", 'data-bs-title': "Editar foto de perfil" %>
+</div>
 
 <%= form_with(url: users_backoffice_profile_path, model: @user, local: true) do |form| %>
     <div class="container p-0">
