@@ -1,9 +1,28 @@
 <h1>Bem-vindo, <%= current_user.full_name %>!</h1>
 
-<div class="position-relative my-3 rounded" style="width: 150px; height: 150px; overflow: hidden; cursor: pointer">
-    <%= image_tag avatar_url, class: 'position-absolute top-50 start-50 translate-middle w-100' %>
+
+
+
+<div class='d-flex gap-3'>
+  <div class="card text-bg-success mb-3 text-center" style="min-width: 12rem;">
+    <div class="card-header p-1">Corretas</div>
+    <div class="card-body p-1">
+      <h5 class="card-title fs-1 m-0"><%= @user_statistic.correct_questions %></h5>
+    </div>
+  </div>
+
+  <div class="card text-bg-danger mb-3 text-center" style="min-width: 12rem;">
+    <div class="card-header p-1">Incorretas</div>
+    <div class="card-body p-1">
+      <h5 class="card-title fs-1 m-0"><%= @user_statistic.incorrect_questions %></h5>
+    </div>
+  </div>
+
+  <div class="card text-bg-primary mb-3 text-center" style="min-width: 12rem;">
+    <div class="card-header p-1">Total</div>
+    <div class="card-body p-1">
+      <h5 class="card-title fs-1 m-0"><%= @user_statistic.total_questions %></h5>
+    </div>
+  </div>
 </div>
 
-<span>
-  <%= link_to 'Log-off - User', destroy_user_session_path, method: :delete %>
-</span>
